@@ -1,0 +1,15 @@
+﻿
+namespace ApiEstudianteSeguro.Models
+{
+
+    using System.Data.Entity;
+    public class DataContext : DbContext 
+    {
+        public DataContext(): base ("DefaultConnection")
+        {
+
+        }
+
+        public System.Data.Entity.DbSet<ApiEstudianteSeguro.Models.Student> Students { get; set; }
+    }
+}
