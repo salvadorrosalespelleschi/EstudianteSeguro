@@ -17,6 +17,7 @@ namespace ApiEstudianteSeguro.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/Students
+        [Authorize]
         public IQueryable<Student> GetStudents()
         {
             return db.Students;
@@ -24,6 +25,7 @@ namespace ApiEstudianteSeguro.Controllers
 
         // GET: api/Students/5
         [ResponseType(typeof(Student))]
+        [Authorize]
         public IHttpActionResult GetStudent(int id)
         {
             Student student = db.Students.Find(id);
@@ -37,6 +39,7 @@ namespace ApiEstudianteSeguro.Controllers
 
         // PUT: api/Students/5
         [ResponseType(typeof(void))]
+        [Authorize]
         public IHttpActionResult PutStudent(int id, Student student)
         {
             if (!ModelState.IsValid)
@@ -72,6 +75,7 @@ namespace ApiEstudianteSeguro.Controllers
 
         // POST: api/Students
         [ResponseType(typeof(Student))]
+        [Authorize]
         public IHttpActionResult PostStudent(Student student)
         {
             if (!ModelState.IsValid)
@@ -87,6 +91,7 @@ namespace ApiEstudianteSeguro.Controllers
 
         // DELETE: api/Students/5
         [ResponseType(typeof(Student))]
+        [Authorize]
         public IHttpActionResult DeleteStudent(int id)
         {
             Student student = db.Students.Find(id);
